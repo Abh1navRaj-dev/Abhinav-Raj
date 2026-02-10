@@ -397,6 +397,24 @@ body {
     text-decoration: none;
 }
 
+.closure {
+    text-align: center;
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    color: white;
+    margin: 40px 20px;
+    display: flex;
+    align-items: center;
+}
+.closure::before,
+.closure::after {
+    content: '';
+    flex: 1;
+    height: 2px;
+    background-color: #8A244B;
+    margin: 0 20px;
+}
+
 #footer {
     width: 100%;
     padding: 50px 20px 20px;
@@ -529,4 +547,13 @@ body {
         font-size: 0.9rem;
     }
     .service-card { min-width: 150px; height: 120px; }
+
+    .closure {
+        font-size: 1.2rem;
+        margin: 30px 10px;
+    }
+    .closure::before,
+    .closure::after {
+        margin: 0 10px;
+    }
 }
