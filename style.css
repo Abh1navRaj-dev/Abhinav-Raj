@@ -25,7 +25,8 @@
     align-items: center;
     padding: 0 50px;
     position: relative; /* Needed for mobile menu positioning */
-    border-bottom: #8A244B 4px solid;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    border-bottom: #8A244B 1px solid;
 }
 #navbar h1 {
     color: white;
@@ -68,6 +69,11 @@
     color: #D02752;
     border: 2px solid white;
 }
+#navbar ul li a.active {
+    background-color: #8A244B;
+    border-radius: 10px;
+    font-weight: 600;
+}
 body {
     background-color: #D02752;
     font-family: var(--font-body);
@@ -94,7 +100,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
+    border-radius: 6px;
     gap: 40px;
     width: 100%;
     max-width: none;
@@ -108,7 +114,7 @@ body {
 .hero-image {
     width: 150px;
     height: 150px;
-    border: 5px solid #F63049;
+    border: 3px solid #F63049;
     border-radius: 50%;
     flex-shrink: 0;
     overflow: hidden;
@@ -183,15 +189,15 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
-    gap: 15px;
+    border-radius: 6px;
+    gap: 5px;
     width: 100%;
     max-width: none;
     height: auto;
 }
 #skills h2 {
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-family: var(--font-heading);
     font-size: 2rem;
     text-decoration: none;
@@ -199,13 +205,14 @@ body {
 #skills .scroll-content {
     list-style: none;
     align-items: center;
+    padding-top: 0;
 }
 #skills li {
     color: white;
-    padding: 10px 15px;
-    border-radius: 8px;
-    font-size: 1rem;
-    background-color: #8A244B;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: #2A3C55;
     white-space: nowrap;
     flex-shrink: 0;
     transition: 0.3s;
@@ -225,38 +232,36 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
-    gap: 15px;
+    border-radius: 6px;
+    gap: 5px;
     width: 100%;
     max-width: none;
     height: auto;
 }
 #services h2 {
     color: white;
-    margin-bottom: 5px;
+    margin-bottom: 0;
     font-family: var(--font-heading);
     font-size: 2rem;
     text-decoration: none;
 }
 .service-card {
-    min-width: 200px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    /* Sizing matched with #skills li for consistency */
     color: white;
-    padding: 20px;
-    border-radius: 12px;
-    font-size: 1.2rem;
-    background: linear-gradient(145deg, #162942, #0e1a2d);
-    border: 1px solid #8A244B;
-    box-shadow: 5px 5px 10px #0b1422, -5px -5px 10px #172a48;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    background: #1A2C45;
+    border: 1px solid #2A3C55;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
     transition: 0.3s;
     text-align: center;
+    white-space: nowrap;
 }
 .service-card:hover {
-    background-color: #8A244B;
+    background: rgba(255, 255, 255, 0.15);
     transform: translateY(-5px);
     cursor: pointer;
     border-color: #F63049;
@@ -269,7 +274,7 @@ body {
    margin: 0;
    padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
+    border-radius: 6px;
     gap: 15px;
     width: 100%;
     max-width: none;
@@ -288,7 +293,7 @@ body {
 }
 .work-item {
     background-color: #1A2C45;
-    border-radius: 10px;
+    border-radius: 6px;
     overflow: hidden;
     transition: 0.3s;
     border: 1px solid transparent;
@@ -321,7 +326,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
+    border-radius: 6px;
     gap: 15px;
     width: 100%;
     color: white;
@@ -341,7 +346,7 @@ body {
     background-color: #F63049;
     color: white;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: 0.3s;
     margin-top: 10px;
 }
@@ -357,7 +362,7 @@ body {
     margin: 0;
     padding: 20px;
     background-color: #111F35;
-    border-radius: 15px;
+    border-radius: 6px;
     gap: 15px;
     width: 100%;
     color: white;
@@ -400,10 +405,11 @@ body {
 .closure {
     text-align: center;
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     color: white;
     margin: 40px 20px;
     display: flex;
+    justify-content: center;
     align-items: center;
 }
 .closure::before,
@@ -419,10 +425,10 @@ body {
     width: 100%;
     padding: 50px 20px 20px;
     background-color: #111F35;
-    border-radius: 15px;
+    border-radius: 6px;
     color: white;
     margin-top: 30px;
-    border-top: 4px solid #8A244B;
+    border-top: 1px solid #8A244B;
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -538,18 +544,14 @@ body {
 @media (max-width: 480px) {
     #navbar h1 { font-size: 2rem; margin-left: 0; }
     .hero-image { width: 120px; height: 120px; }
-    .hero-content h2, #skills h2, #services h2, #recent-work h2, #contact h2, #social-media h2 {
-        font-size: 1.8rem;
-    }
+    .hero-content h2, #skills h2, #services h2, #recent-work h2, #contact h2, #social-media h2 { font-size: 1.8rem; }
     .footer-column h3 { font-size: 1.5rem; }
     #skills li, .service-card {
         padding: 8px 12px;
         font-size: 0.9rem;
     }
-    .service-card { min-width: 150px; height: 120px; }
-
     .closure {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
         margin: 30px 10px;
     }
     .closure::before,

@@ -24,7 +24,7 @@
    </label>
    <ul>
     <li class="item"><a href="services.html">Services</a></li>
-    <li class="item"><a href="index.html">About me</a></li>
+    <li class="item"><a href="index.html" class="active">About me</a></li>
     <li class="item"><a href="portfolio.html">Portfolio</a></li>
     <li class="item"><a href="contact.html">Contact</a></li>
    </ul>
@@ -69,7 +69,7 @@
     </section>
    </div>
    <section id="services">
-    <h2>My Services</h2>
+    <h2>Services</h2>
     <div class="carousel-container">
      <div class="scroll-arrow left"></div>
      <div class="scroll-content">
@@ -123,18 +123,18 @@
   <section id="social-media">
     <h2> My social media links</h2>
     <ul>
-     <li>Email: <a href="mailto:user@example.com">user@example.com</a></li>
-     <li>LinkedIn: <a href="#">linkedin.com/in/username</a></li>
-     <li>GitHub: <a href="#">github.com/username</a></li>
-     <li>Instagram: <a href="#">instagram.com/username</a></li>
-     <li>Twitter: <a href="#">twitter.com/username</a></li>
-     <li>Freelancer: <a href="#">freelancer.com/username</a></li>
+     <li>Email: <a href="mailto:abhinavraj.11124@gmail.com" target="_blank">abhinavraj.11124@gmail.com</a></li>
+     <li>LinkedIn: <a href="https://www.linkedin.com/in/abhinav-raj-8549513b1" target="_blank">linkedin.com/in/Abhinav Raj</a></li>
+     <li>GitHub: <a href="https://github.com/Abh1navRaj-dev" target="_blank">github.com/Abh1navRaj-dev</a></li>
+     <li>Instagram: <a href="https://www.instagram.com/abh1nav.raj/" target="_blank">instagram.com/abh1nav.raj</a></li>
+     <li>Twitter: <a href="https://x.com/Abh1navRaj" target="_blank">twitter.com/Abh1navRaj</a></li>
+     <li>Freelancer: <a href="#" target="_blank">freelancer.com/username</a></li>
      <li>Upwork: <a href="#">upwork.com/username</a></li>
      <li>Fiverr: <a href="#">fiverr.com/username</a></li>
      
     </ul>
   </section>
-    <p class="closure line">Thank you for visiting my website!</p>
+    <p class="closure">Thank you for visiting my website!</p>
   <section id="footer">
     <div class="footer-container">
       <div class="footer-column">
@@ -162,14 +162,5 @@
   </section>
 
  </main>
- <script>
-  document.querySelectorAll('.scroll-arrow').forEach(arrow => {
-   arrow.addEventListener('click', () => {
-    const container = arrow.parentElement.querySelector('.scroll-content');
-    const direction = arrow.classList.contains('left') ? -1 : 1;
-    container.scrollBy({ left: 300 * direction, behavior: 'smooth' });
-   });
-  });
- </script>
 </body>
 </html>
