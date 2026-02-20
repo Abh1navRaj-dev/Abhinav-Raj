@@ -13,29 +13,37 @@
     --arrow-bg-hover: #F63049;
     --arrow-margin: 10px;
     --arrow-padding: 10px;
-    --arrow-icon: url('keyboard_double_arrow_left_24dp_DCEAD5_FILL0_wght400_GRAD0_opsz24.svg');
+    --arrow-icon: url('keyboard_double_arrow_left_24dp_DCEAD5_FILL0_wght400_GRAD0_opsz24.svg'); /* Consider inlining this SVG for performance */
+    /* Design tokens */
+    --bg: #0B1220;
+    --surface: #111F35;
+    --surface-alt: #1A2C45;
+    --accent: #F63049;
+    --accent-dark: #8A244B;
+    --muted: #2A3C55;
+    --gap: 24px;
 }
 
 #navbar {
     display: flex;
     height: 80px;
     width: 100%;
-    background-color: #F63049;
+    background-color: rgba(11, 18, 32, 0.85); /* Modern dark glass look */
+    backdrop-filter: blur(12px);
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
     position: relative; /* Needed for mobile menu positioning */
     box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    border-bottom: #8A244B 1px solid;
+    border-bottom: 1px solid rgba(246, 48, 73, 0.3);
 }
 #navbar h1 {
     color: white;
     font-family: var(--font-heading);
     font-size: 2.5rem;
-    text-decoration: underline;
-    margin-left: -40px;
+    text-decoration: none;
+    margin-left: 0;
     margin-bottom: 10px;
-
 }
 #navbar ul {
     display: flex;
@@ -48,35 +56,34 @@
     color: white;
     font-size: 1.2rem;
     padding: 5px;
+    border-radius: 10px;
     border: 2px solid transparent;
-    transition: 0.3s;
-
-}
-#navbar ul li a:link {
-    color: white;
-}
-#navbar ul li a:visited {
-    color: white;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
 }
 #navbar ul li a:hover {
-    background-color: #8A244B;
-    border: 2px solid #8A244B;
-    border-radius: 10px;
-    text-decoration: none;
+    background-color: var(--accent);
+    border-color: var(--accent);
 }
 #navbar ul li a:active {
     background-color: white;
     color: #D02752;
     border: 2px solid white;
+    border-color: white;
 }
 #navbar ul li a.active {
-    background-color: #8A244B;
+    background-color: var(--accent-dark);
     border-radius: 10px;
     font-weight: 600;
 }
 body {
-    background-color: #D02752;
+    background-color: var(--bg);
     font-family: var(--font-body);
+    color: #E6EEF8;
+    /* Add depth with ambient light gradients */
+    background-image: 
+        radial-gradient(circle at 15% 20%, rgba(246, 48, 73, 0.12) 0%, transparent 40%),
+        radial-gradient(circle at 85% 80%, rgba(138, 36, 75, 0.12) 0%, transparent 40%);
+    background-attachment: fixed;
 }
 .main-container {
     display: flex;
@@ -99,7 +106,10 @@ body {
     align-items: center;
     margin: 0;
     padding: 20px;
-    background-color: #111F35;
+    /* Glassmorphism for Hero */
+    background: linear-gradient(135deg, rgba(17, 31, 53, 0.8), rgba(17, 31, 53, 0.4));
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 6px;
     gap: 40px;
     width: 100%;
@@ -114,7 +124,8 @@ body {
 .hero-image {
     width: 150px;
     height: 150px;
-    border: 3px solid #F63049;
+    border: 3px solid var(--accent);
+    box-shadow: 0 0 25px rgba(246, 48, 73, 0.4); /* Glow effect */
     border-radius: 50%;
     flex-shrink: 0;
     overflow: hidden;
@@ -133,6 +144,34 @@ body {
     line-height: 1.6;
 }
 
+/* Reveal animation for hero & sections */
+.hero-content, main > section {
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 500ms ease, transform 500ms ease;
+}
+.hero-content.show, main > section.show {
+    opacity: 1;
+    transform: none;
+}
+
+/* Microinteractions */
+button.scroll-arrow { border: none; background: var(--arrow-bg); }
+button.scroll-arrow:focus { outline: 3px solid rgba(246,48,73,0.25); }
+a:focus, button:focus { outline: none; }
+
+.contact-button, .contact-button:focus {
+    transition: transform 200ms ease, background-color 200ms ease;
+}
+
+/* Focus-visible for keyboard users */
+:focus-visible {
+    outline: 3px solid rgba(246,48,73,0.18);
+    outline-offset: 2px;
+}
+
+/* Ensure scroll-content gap for recent work is respected */
+#recent-work .scroll-content { gap: 28px; padding: 16px; }
 /* Carousel & Scroll Styles */
 .carousel-container {
     position: relative;
@@ -148,6 +187,7 @@ body {
     scrollbar-width: none; /* Firefox */
     padding: 10px 5px;
     width: 100%;
+    height: auto;
 }
 .scroll-content::-webkit-scrollbar {
     display: none; /* Chrome/Safari */
@@ -182,18 +222,21 @@ body {
     transform: rotate(180deg) scale(1.1);
 }
 
-#skills {
+/* --- Section Card Base Styles --- */
+/* Grouping common styles for sections to keep code DRY */
+#skills,
+#services,
+#recent-work,
+#contact,
+#social-media {
     display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center;    /* Center the heading and content */
+    flex-direction: column;
+    align-items: center;
     margin: 0;
     padding: 20px;
-    background-color: #111F35;
+    background-color: transparent; /* Remove the "floor" box */
     border-radius: 6px;
-    gap: 5px;
     width: 100%;
-    max-width: none;
-    height: auto;
 }
 #skills h2 {
     color: white;
@@ -201,6 +244,9 @@ body {
     font-family: var(--font-heading);
     font-size: 2rem;
     text-decoration: none;
+}
+#skills {
+    gap: 5px;
 }
 #skills .scroll-content {
     list-style: none;
@@ -212,32 +258,20 @@ body {
     padding: 8px 16px;
     border-radius: 4px;
     font-size: 0.9rem;
-    background-color: #2A3C55;
+    background: rgba(42, 60, 85, 0.6); /* Glassy pill */
+    backdrop-filter: blur(4px);
     white-space: nowrap;
     flex-shrink: 0;
-    transition: 0.3s;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
 }
 #skills li:hover {
-    background-color: #F63049;
-    border: 1px solid #F63049;
+    background-color: var(--accent);
+    border-color: var(--accent);
     transform: scale(1.1);
     cursor: pointer;
 }
 
-#services {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #111F35;
-    border-radius: 6px;
-    gap: 5px;
-    width: 100%;
-    max-width: none;
-    height: auto;
-}
 #services h2 {
     color: white;
     margin-bottom: 0;
@@ -245,18 +279,22 @@ body {
     font-size: 2rem;
     text-decoration: none;
 }
+#services {
+    gap: 5px;
+}
 .service-card {
     /* Sizing matched with #skills li for consistency */
     color: white;
     padding: 8px 16px;
     border-radius: 4px;
-    font-size: 0.9rem;
+    font-size: 0.9rem; 
     font-weight: 500;
-    background: #1A2C45;
-    border: 1px solid #2A3C55;
+    background: rgba(26, 44, 69, 0.7); /* Glassy card */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex-shrink: 0;
-    transition: 0.3s;
+    transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
     text-align: center;
     white-space: nowrap;
 }
@@ -264,44 +302,35 @@ body {
     background: rgba(255, 255, 255, 0.15);
     transform: translateY(-5px);
     cursor: pointer;
-    border-color: #F63049;
+    border-color: var(--accent);
 }
 
 #recent-work {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   margin: 0;
-   padding: 20px;
-    background-color: #111F35;
-    border-radius: 6px;
     gap: 15px;
-    width: 100%;
-    max-width: none;
-    height: auto
 }
 #recent-work h2 {
     font-family: var(--font-heading);
     font-size: 2rem;
     color: white;
 }
-.work-items{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-    width: 100%;
+#recent-work .scroll-content {
+    /* The gap for this is set in the Microinteractions section */
 }
 .work-item {
-    background-color: #1A2C45;
+    min-width: calc(100% / 3 - 20px);
+    flex-shrink: 0;
+    background: rgba(26, 44, 69, 0.7); /* Glassy card */
+    backdrop-filter: blur(5px);
     border-radius: 6px;
     overflow: hidden;
-    transition: 0.3s;
-    border: 1px solid transparent;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    /* Stronger, more polished transition */
+    transition: transform 250ms ease, box-shadow 250ms ease, border-color 250ms ease;
 }
 .work-item:hover {
-    transform: translateY(-5px);
-    border-color: #F63049;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    transform: translateY(-8px);
+    border-color: var(--accent);
+    box-shadow: 0 16px 30px rgba(0,0,0,0.45);
 }
 .work-item img {
     width: 100%;
@@ -309,7 +338,7 @@ body {
     object-fit: cover;
 }
 .work-item h3 {
-    color: #F63049;
+    color: var(--accent);
     font-family: var(--font-heading);
     padding: 15px 15px 5px;
 }
@@ -318,17 +347,28 @@ body {
     padding: 0 15px 20px;
     font-size: 0.9rem;
 }
+.work-item.view-all-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent);
+    padding: 20px;
+}
+
+.work-item.view-all-btn a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.work-item.view-all-btn:hover {
+    background-color: var(--accent-dark);
+    transform: scale(1.05);
+}
 
 #contact {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #111F35;
-    border-radius: 6px;
     gap: 15px;
-    width: 100%;
     color: white;
     text-align: center;
 }
@@ -343,28 +383,20 @@ body {
 .contact-button {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #F63049;
+    background-color: var(--accent);
     color: white;
     text-decoration: none;
     border-radius: 4px;
-    transition: 0.3s;
     margin-top: 10px;
+    /* Transition is handled by a more specific rule in the Microinteractions section */
 }
 .contact-button:hover {
-    background-color: #8A244B;
+    background-color: var(--accent-dark);
     transform: scale(1.05);
 }
 
 #social-media {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0;
-    padding: 20px;
-    background-color: #111F35;
-    border-radius: 6px;
     gap: 15px;
-    width: 100%;
     color: white;
 }
 #social-media h2 {
@@ -383,21 +415,16 @@ body {
 }
 #social-media ul li {
     font-size: 1rem;
-    background-color: #8A244B;
+    background-color: var(--accent-dark);
     padding: 10px 20px;
     border-radius: 50px;
-    transition: 0.3s;
+    transition: background-color 0.2s ease, transform 0.2s ease;
 }
 #social-media ul li:hover {
-    background-color: #F63049;
+    background-color: var(--accent);
     transform: scale(1.05);
 }
 #social-media ul li a {
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-#social-media ul li a:hover {
     color: white;
     text-decoration: none;
 }
@@ -417,18 +444,18 @@ body {
     content: '';
     flex: 1;
     height: 2px;
-    background-color: #8A244B;
+    background-color: var(--accent-dark);
     margin: 0 20px;
 }
 
 #footer {
     width: 100%;
     padding: 50px 20px 20px;
-    background-color: #111F35;
+    background: linear-gradient(to top, var(--surface), transparent);
     border-radius: 6px;
     color: white;
     margin-top: 30px;
-    border-top: 1px solid #8A244B;
+    border-top: 1px solid var(--accent-dark);
     display: flex;
     flex-direction: column;
     gap: 30px;
@@ -451,16 +478,16 @@ body {
     font-family: var(--font-heading);
     font-size: 1.8rem;
     margin-bottom: 20px;
-    color: #F63049;
+    color: var(--accent);
 }
 .footer-column ul {
     list-style: none;
 }
 .footer-column p, .footer-column ul li a {
-    color: #ccc;
+    color: #E6EEF8; /* Using the main body color for better consistency */
     line-height: 1.6;
     text-decoration: none;
-    transition: 0.3s;
+    transition: color 0.2s ease, padding-left 0.2s ease;
     display: block;
     margin-bottom: 10px;
 }
@@ -508,7 +535,7 @@ body {
         left: 0;
         width: 100%;
         height: calc(100vh - 80px);
-        background-color: #F63049;
+        background-color: var(--accent);
         flex-direction: column;
         justify-content: center;
         gap: 40px;

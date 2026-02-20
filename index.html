@@ -5,7 +5,6 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Abhinav Raj - Portfolio Site</title>
  <link rel="stylesheet" href="style.css">
- <script src="script.js"></script>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -53,8 +52,8 @@
     </section>
     <section id="skills">
      <h2>Skills</h2>
-     <div class="carousel-container">
-      <div class="scroll-arrow left"></div>
+    <div class="carousel-container">
+     <button class="scroll-arrow left" aria-label="Scroll left"></button>
       <ul class="scroll-content">
        <li>HTML</li>
        <li>CSS</li>
@@ -64,14 +63,14 @@
        <li>3D Modelling (Specialised software: Blender)</li>
        <li>Video Editing</li>
       </ul>
-      <div class="scroll-arrow right"></div>
+      <button class="scroll-arrow right" aria-label="Scroll right"></button>
      </div>
     </section>
    </div>
    <section id="services">
     <h2>Services</h2>
     <div class="carousel-container">
-     <div class="scroll-arrow left"></div>
+     <button class="scroll-arrow left" aria-label="Scroll left"></button>
      <div class="scroll-content">
       <div class="service-card">
        <h3>Web Development</h3>
@@ -92,28 +91,35 @@
        <h3>Animation</h3>
       </div>
      </div>
-     <div class="scroll-arrow right"></div>
+    <button class="scroll-arrow right" aria-label="Scroll right"></button>
     </div>
    </section>
    <section id="recent-work">
     <h2>Recent Projects</h2>
-    <div class="work-items">
-     <div class="work-item">
-      <img src="project1.jpg" alt="Project 1">
-      <h3>Project Title 1</h3>
-      <p>Brief description of the project.</p>
+    <div class="carousel-container">
+     <button class="scroll-arrow left" aria-label="Scroll left"></button>
+     <div class="scroll-content">
+      <div class="work-item">
+       <img src="project1.jpg" alt="Project 1" loading="lazy">
+       <h3>Project Title 1</h3>
+       <p>Brief description of the project.</p>
+      </div>
+      <div class="work-item">
+       <img src="project2.jpg" alt="Project 2" loading="lazy">
+       <h3>Project Title 2</h3>
+       <p>Brief description of the project.</p>
+      </div>
+      <div class="work-item">
+       <img src="project3.jpg" alt="Project 3" loading="lazy">
+       <h3>Project Title 3</h3>
+       <p>Brief description of the project.</p>
+      </div>
+      <div class="work-item view-all-btn">
+       <a href="portfolio.html">View All Projects</a>
+      </div>
      </div>
-     <div class="work-item">
-      <img src="project2.jpg" alt="Project 2">
-      <h3>Project Title 2</h3>
-      <p>Brief description of the project.</p>
-     </div>
-     <div class="work-item">
-      <img src="project3.jpg" alt="Project 3">
-      <h3>Project Title 3</h3>
-      <p>Brief description of the project.</p>
-     </div>
-  </div>
+     <button class="scroll-arrow right" aria-label="Scroll right"></button>
+    </div>
   </section>
   <section id="contact">
     <h2>Contact Me</h2>
@@ -123,12 +129,12 @@
   <section id="social-media">
     <h2> My social media links</h2>
     <ul>
-     <li>Email: <a href="mailto:abhinavraj.11124@gmail.com" target="_blank">abhinavraj.11124@gmail.com</a></li>
-     <li>LinkedIn: <a href="https://www.linkedin.com/in/abhinav-raj-8549513b1" target="_blank">linkedin.com/in/Abhinav Raj</a></li>
-     <li>GitHub: <a href="https://github.com/Abh1navRaj-dev" target="_blank">github.com/Abh1navRaj-dev</a></li>
-     <li>Instagram: <a href="https://www.instagram.com/abh1nav.raj/" target="_blank">instagram.com/abh1nav.raj</a></li>
-     <li>Twitter: <a href="https://x.com/Abh1navRaj" target="_blank">twitter.com/Abh1navRaj</a></li>
-     <li>Freelancer: <a href="#" target="_blank">freelancer.com/username</a></li>
+     <li>Email: <a href="mailto:user@example.com">user@example.com</a></li>
+     <li>LinkedIn: <a href="#">linkedin.com/in/username</a></li>
+     <li>GitHub: <a href="#">github.com/username</a></li>
+     <li>Instagram: <a href="#">instagram.com/username</a></li>
+     <li>Twitter: <a href="#">twitter.com/username</a></li>
+     <li>Freelancer: <a href="#">freelancer.com/username</a></li>
      <li>Upwork: <a href="#">upwork.com/username</a></li>
      <li>Fiverr: <a href="#">fiverr.com/username</a></li>
      
@@ -162,5 +168,6 @@
   </section>
 
  </main>
+<script src="script.js"></script>
 </body>
 </html>
