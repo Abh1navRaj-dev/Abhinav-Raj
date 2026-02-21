@@ -402,6 +402,30 @@ body {
     text-decoration: none;
 }
 
+/* Icon-only social button (e.g., Instagram) */
+#social-media ul li.icon-only {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+}
+#social-media ul li .social-icon {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    background-color: #8A244B;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background-color 0.2s;
+}
+#social-media ul li .social-icon:hover {
+    background-color: #F63049;
+    transform: scale(1.05);
+}
+
 .closure {
     text-align: center;
     font-family: var(--font-heading);
