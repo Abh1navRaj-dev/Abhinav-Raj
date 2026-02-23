@@ -267,6 +267,7 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     transition: all 0.4s ease-in-out;
     border: 1px solid #2A3C55;
+    flex-shrink: 0; /* Prevent boxes from shrinking in flex container */
 }
 
 .service-box:hover {
@@ -623,6 +624,26 @@ body {
     #hero { flex-direction: column; text-align: center; }
     .footer-container { flex-direction: column; text-align: center; }
     .footer-column ul { padding: 0; }
+
+    /* Home Page: Services Section on Mobile */
+    .service-box {
+        /* Resizing the boxes for smaller screens to fit two at a time */
+        width: 160px;
+        height: 224px;
+    }
+
+    .service-overlay h3 {
+        font-size: 1.2rem;
+    }
+
+    .service-overlay p {
+        font-size: 0.8rem;
+        margin-bottom: 10px;
+    }
+
+    .service-link {
+        font-size: 2rem;
+    }
 }
 
 /* Small Mobile Styles */
