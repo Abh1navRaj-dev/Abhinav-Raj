@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* --- Global Variables & Styles --- */
 :root {
     --font-heading: "Lobster Two", cursive;
     --font-body: "Poppins", sans-serif;
@@ -22,6 +23,7 @@ body {
         overflow-x: hidden;
 }
 
+/* --- Navigation Bar --- */
 #navbar {
     display: flex;
     height: 80px;
@@ -81,6 +83,7 @@ body {
     border-radius: 10px;
     font-weight: 600;
 }
+/* --- Home Page Sections --- */
 .main-container {
     display: flex;
     flex-direction: column;
@@ -231,47 +234,102 @@ body {
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
+/* --- Home Page: Services Section --- */
 #services {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin: 0;
-    padding: 40px 20px;
-    border-radius: 0;
-    gap: 5px;
+    padding: 40px 0; /* Reduced side padding */
     width: 100%;
-    max-width: none;
-    height: auto;
     border-bottom: 2px solid var(--accent-color);
     text-align: center;
 }
 #services h2 {
     color: var(--text-color);
-    margin-bottom: 0;
+    margin-bottom: 30px; /* Added more space */
     font-family: var(--font-heading);
     font-size: 2rem;
     text-decoration: none;
 }
-.service-card {
-    /* Sizing matched with #skills li for consistency */
-    color: var(--text-color);
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-    font-weight: 500;
-    background: #1A2C45;
-    border: 1px solid #2A3C55;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-    transition: 0.3s;
-    text-align: center;
-    white-space: nowrap;
+
+#services .scroll-content {
+    gap: 30px; /* Spacing between service boxes */
+    padding: 10px 20px; /* Padding on the sides of the scroll area */
 }
-.service-card:hover {
-    background: rgba(255, 255, 255, 0.15);
-    transform: translateY(-5px);
-    cursor: pointer;
+.service-box {
+    position: relative;
+    width: 250px;
+    height: 350px; /* Vertical cuboid shape */
+    background-color: #1A2C45;
+    border-radius: 10px;
+    overflow: hidden; /* This is key */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: all 0.4s ease-in-out;
+    border: 1px solid #2A3C55;
+}
+
+.service-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0,0,0,0.4);
     border-color: var(--accent-color);
+}
+
+.service-bg-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: height 0.4s ease-in-out;
+}
+
+.service-box:hover .service-bg-image {
+    height: 50%; /* On hover, image takes top half */
+}
+
+.service-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: linear-gradient(to top, rgba(26, 44, 69, 1) 50%, rgba(26, 44, 69, 0.8));
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    transform: translateY(100%); /* Initially hidden */
+    transition: transform 0.4s ease-in-out;
+}
+
+.service-box:hover .service-overlay {
+    transform: translateY(0); /* Revealed on hover */
+}
+
+.service-overlay h3 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.service-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+.service-link {
+    color: var(--text-color);
+    font-size: 2.5rem; /* Larger arrow */
+    transition: all 0.3s ease;
+}
+
+.service-link:hover {
+    color: var(--accent-color);
+    transform: scale(1.1);
 }
 
 #recent-work {
@@ -357,6 +415,7 @@ body {
     transform: scale(1.05);
 }
 
+/* --- Social Media & Footer --- */
 #social-media {
     display: flex;
     flex-direction: row;
