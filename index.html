@@ -5,6 +5,7 @@
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <title>Abhinav Raj - Portfolio Site</title>
  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -12,6 +13,7 @@
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+ <!-- Header & Navigation Bar -->
  <header>
   <nav id="navbar">
    <div id="logo">
@@ -29,11 +31,16 @@
     <li class="item"><a href="index.html" class="active">About me</a></li>
     <li class="item"><a href="portfolio.html">Portfolio</a></li>
     <li class="item"><a href="contact.html">Contact</a></li>
+    <li class="item"><a href="form.html">Inquiry Form</a></li>
    </ul>
   </nav>
  </header>
+ <!-- End Header & Navigation Bar -->
+
+ <!-- Main Content -->
  <main>
   <div class="main-container">
+    <!-- Hero Section -->
     <section id="hero">
      <div class="hero-image">
       <img src="view-cartoon-animated-3d-penguin.jpg" alt="Profile Photo">
@@ -52,6 +59,8 @@
       </p>
      </div>
     </section>
+    <!-- End Hero Section -->
+    <!-- Skills Section -->
     <section id="skills">
      <h2>Skills</h2>
     <div class="carousel-container">
@@ -116,9 +125,11 @@
       </ul>
      </div>
     </section>
+    <!-- End Skills Section -->
+   <!-- Services Section -->
    <section id="services">
     <h2>Services</h2>
-    <div class="carousel-container">
+    <section class="carousel-container">
      <div class="scroll-content">
       <div class="service-box">
          <img src="daniel-korpai-pKRNxEguRgM-unsplash.jpg" alt="Web Development" class="service-bg-image">
@@ -163,26 +174,17 @@
       <div class="service-box">
          <img src="creatvise-zrOBY-0hF-g-unsplash.jpg" alt="Landing Page Designing" class="service-bg-image">
          <div class="service-overlay">
-             <h3>Landing Page Designing</h3>
+             <h3>Landing Page & UI/UX Designing</h3>
              <p>High-converting landing pages for your campaigns.</p>
              <a href="services.html" class="service-link">
                  <i class="fa-solid fa-circle-arrow-right"></i>
              </a>
          </div>
       </div>
-      <div class="service-box">
-         <img src="zesan-h-71trKpjAeY4-unsplash.jpg" alt="UI/UX Designing" class="service-bg-image">
-         <div class="service-overlay">
-             <h3>UI/UX Designing</h3>
-             <p>Intuitive and user-centric interface designs.</p>
-             <a href="services.html" class="service-link">
-                 <i class="fa-solid fa-circle-arrow-right"></i>
-             </a>
-         </div>
      </div>
-     </div>
-    </div>
    </section>
+   <!-- End Services Section -->
+   <!-- Recent Projects Section -->
    <section id="recent-work">
     <h2>Recent Projects</h2>
     <div class="carousel-container">
@@ -208,14 +210,23 @@
      </div>
     </div>
   </section>
+  <!-- End Recent Projects Section -->
+  <!-- Contact Section -->
   <section id="contact">
     <h2>Contact Me</h2>
     <p>If you'd like to get in touch, or want to work with me, feel free to reach out to me by filling the google form below.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSeeR1JtB7qEJ9N2ZRe3Z9TOm-hmc6uBlhMAw9T9pvpiwkkzLw/viewform?usp=publish-editor" target = "_blank" class="contact-button">Contact Me</a>
   </section>
+  <!-- End Contact Section -->
   </div>
   </main>
+  <!-- End Main Content -->
+
+  <!-- closure line -->
     <p class="closure">Thank you for visiting my website!</p>
+  <!-- End closure line -->
+
+  <!-- Footer Section -->
   <section id="footer">
     <div class="footer-container">
       <div class="footer-column">
@@ -300,7 +311,6 @@
       <p>&copy; 2025 Abhinav Raj. All rights reserved.</p>
     </div>
   </section>
-
-<script src="script.js"></script>
+  <!-- End Footer Section -->
 </body>
 </html>

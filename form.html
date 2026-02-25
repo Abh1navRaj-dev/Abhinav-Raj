@@ -3,21 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Page Title -->
+    <title>Inquiry Form - Abhinav Raj</title>
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <title>Abhinav Raj</title>
 </head>
 <body>
+<!-- Header and Navigation Bar -->
 <header>
   <nav id="navbar">
    <div id="logo">
     <h1>Abhinav Raj</h1>
    </div>
-  
    <label for="menu-toggle" class="hamburger-menu">
     <span class="bar"></span>
     <span class="bar"></span>
@@ -29,12 +35,15 @@
     <li class="item"><a href="index.html">About me</a></li>
     <li class="item"><a href="portfolio.html">Portfolio</a></li>
     <li class="item"><a href="contact.html">Contact</a></li>
+    <li class="item"><a href="form.html" class="active">Inquiry Form</a></li>
    </ul>
   </nav>
  </header>
+<!-- Main Content: Inquiry Form -->
 <div class="form-page-wrapper">
     <h1>Inquiry Form</h1>
     <form action = "" method = "POST">
+        <!-- Basic Information -->
         <label for= "name">Name:</label>
         <input type= "text" id = "name" name = "name"
         placeholder = "Enter your name">
@@ -44,33 +53,59 @@
         <label for = "phone">Phone:</label>
         <input type = "tel" id = "phone" name = "phone"
         placeholder = "Enter your phone number">
-        <label for = "service">Service:</label>
-        <select  id="service" name="service">
-            <option value = "" disabled selected>What Service you are looking for?</option>
-            <option value = "web-development">Website Development</option>
-            <option value = "graphic-design">Graphic Design</option>
-            <option value = "a&m">Animation & 3D-Modelling</option>
-            <option value = "i&v">Image & Video Editing</option>
-            <option value = "Not Sure">Not Sure(need guidance yet)</option>
-        </select>
+
+        <!-- Service Selection -->
+        <fieldset>
+            <legend>What service are you looking for?</legend>
+            <div class="checkbox-group">
+                <input type="checkbox" id="web-development" name="service" value="web-development">
+                <label for="web-development">Web Development</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="graphic-design" name="service" value="graphic-design">
+                <label for="graphic-design">Graphic Design</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="animation-3d-modelling" name="service" value="Animation & 3D-Modelling">
+                <label for="animation-3d-modelling">Animation & 3D-Modelling</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="image-video-editing" name="service" value="Image & Video Editing">
+                <label for="image-video-editing">Image & Video Editing</label>
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="not-sure" name="service" value="Not Sure">
+                <label for="not-sure">Not Sure (need guidance)</label>
+            </div>
+        </fieldset>
+
+        <!-- Project Details -->
         <label for = "message">Message:</label>
         <textarea id = "message" name = "message"
         placeholder="Briefly describe your project"></textarea>
          <label for = "reference">Reference:</label>
         <textarea id = "reference" name = "reference"
         placeholder="Do you have any reference or inspiration?"></textarea>
-        <select id = "timeline" name = "timeline">
-            <option value = "" disabled selected>Expected timeline</option>
-            <option value = "Urgent">Urgent (within 1 week)</option>
-            <option value = "1-2 weeks">1 - 2 weeks</option>
-            <option value = "1 month">1 month</option>
-            <option value = "Flexible">Flexible/Not Sure</option>
-        </select>
+        
+        <!-- timeline -->
+         <label for="Urgent">Urgent (within 1 week)</label>
+            <input type="radio" id="Urgent" name="Service" value="Urgent">
+            <label for="1-2 weeks">1 - 2 weeks</label>
+            <input type="radio" id="weeks" name="Service" value="1 - 2 weeks">
+            <label for="1 - month">1 - month</label>
+            <input type="radio" id="month" name="Service" value="1 - month">
+            <label for="Flexible"></label>Flexible/Not Sure
+            <input type="radio" id="Flexible" name="Service" value="Flexible/Not Sure">
+        
+        <!-- Submit Button -->
         <button type = "submit">Submit</button>
     </form>
 
 </div>
+  <!-- Closure Message -->
   <p class="closure">Thank you for visiting my website!</p>
+
+  <!-- Footer -->
   <section id="footer">
     <div class="footer-container">
       <div class="footer-column">
@@ -93,6 +128,7 @@
       </div>
     </div>
     <section id="social-media">
+    <!-- Social Media Links -->
     <ul>
      <li class="icon-only">
        <a href="mailto:abhinavraj.11124@gmail.com" class="social-link social-icon" aria-label="Email">
@@ -125,13 +161,17 @@
        </a>
      </li>
      <li class="icon-only">
-       <a href="https://x.com/Abh1navRaj" target="_blank" rel="noopener noreferrer" by a user-provided file.
+       <a href="https://x.com/Abh1navRaj" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Twitter">
+         <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
        <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Fiverr">
          <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
        </a>
      </li>
      <li class="icon-only">
-       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="YouTube">
+       <a href="www.youtube.com/@Abhinav-c4l" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="YouTube">
          <i class="fa-brands fa-youtube" aria-hidden="true"></i>
        </a>
      </li>

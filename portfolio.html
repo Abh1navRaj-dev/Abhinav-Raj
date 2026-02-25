@@ -3,11 +3,14 @@
 <head>
  <meta charset="UTF-8">
  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Portfolio - Abhinav Raj</title>
+ <title>Abhinav Raj - Portfolio Site</title>
  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+ <!-- Font Awesome for social icons -->
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
  <header>
@@ -15,41 +18,168 @@
    <div id="logo">
     <h1>Abhinav Raj</h1>
    </div>
-   <input type="checkbox" id="menu-toggle">
+  
    <label for="menu-toggle" class="hamburger-menu">
     <span class="bar"></span>
     <span class="bar"></span>
     <span class="bar"></span>
    </label>
+   <input type="checkbox" id="menu-toggle">
    <ul>
     <li class="item"><a href="services.html">Services</a></li>
     <li class="item"><a href="index.html">About me</a></li>
     <li class="item"><a href="portfolio.html" class="active">Portfolio</a></li>
     <li class="item"><a href="contact.html">Contact</a></li>
+    <li class="item"><a href="form.html">Inquiry Form</a></li>
    </ul>
   </nav>
  </header>
+
+ <!-- body content -->
  <main>
-<section id="portfolio">
-    <h2>My Portfolio</h2>
-    <p>Here are some of my recent projects:</p>
-    <div class="project">
-        <h3>Project 1: Personal Blog</h3>
-        <p>A personal blog built with HTML, CSS, and JavaScript. It features a clean design and responsive layout.</p>
-        <a href="https://github.com/abhinav-raj/personal-blog" target="_blank">View Project</a>
-    </div>
-    <div class="project">
-        <h3>Project 2: E-commerce Website</h3>
-        <p>An e-commerce website developed using React and Node.js. It includes features like product listing, shopping cart, and user authentication.</p>
-        <a href="https://github.com/abhinav-raj/e-commerce-website" target="_blank">View Project</a>
-    </div>
-    <div class="project">
-        <h3>Project 3: Portfolio Website</h3>
-        <p>A portfolio website created with HTML, CSS, and JavaScript to showcase my skills and projects.</p>
-        <a href="https://github.com/abhinav-raj/portfolio-website" target="_blank">View Project</a>
+<section>
+    <h1 class="page-title">My Projects</h1>
+    <div class="portfolio-grid">
+        <!-- Project 1 -->
+        <div class="work-item" data-main-image="project1.jpg" data-title="E-commerce Website" data-description="A fully responsive e-commerce platform built with modern web technologies. Features include product filtering, a shopping cart, and a secure checkout process." data-gallery-images='["project1.jpg", "project2.jpg", "project3.jpg"]'>
+            <img src="project1.jpg" alt="Project 1" loading="lazy">
+            <h3>E-commerce Website</h3>
+        </div>
+        <!-- Project 2 -->
+        <div class="work-item" data-main-image="project2.jpg" data-title="Graphic Design Portfolio" data-description="A collection of branding and logo design projects for various clients. The focus was on creating strong visual identities." data-gallery-images='["project2.jpg", "project1.jpg", "project3.jpg"]'>
+            <img src="project2.jpg" alt="Project 2" loading="lazy">
+            <h3>Graphic Design Portfolio</h3>
+        </div>
+        <!-- Project 3 -->
+        <div class="work-item" data-main-image="project3.jpg" data-title="Mobile App UI/UX" data-description="Designed the user interface and experience for a new productivity mobile application, focusing on intuitive navigation and a clean aesthetic." data-gallery-images='["project3.jpg", "project1.jpg", "project2.jpg"]'>
+            <img src="project3.jpg" alt="Project 3" loading="lazy">
+            <h3>Mobile App UI/UX</h3>
+        </div>
+        <!-- Project 4 -->
+        <div class="work-item" data-main-image="project1.jpg" data-title="3D Product Animation" data-description="Created a short, promotional 3D animation for a new tech gadget, showcasing its features and design in a dynamic way." data-gallery-images='["project1.jpg", "project3.jpg", "project2.jpg"]'>
+            <img src="project1.jpg" alt="Project 4" loading="lazy">
+            <h3>3D Product Animation</h3>
+        </div>
+        <!-- Project 5 -->
+        <div class="work-item" data-main-image="project2.jpg" data-title="Video Editing Showcase" data-description="A reel of video editing work, including corporate videos, social media ads, and short films. Edited for pacing, color, and sound." data-gallery-images='["project2.jpg", "project1.jpg", "project3.jpg"]'>
+            <img src="project2.jpg" alt="Project 5" loading="lazy">
+            <h3>Video Editing Showcase</h3>
+        </div>
+        <!-- Project 6 -->
+        <div class="work-item" data-main-image="project3.jpg" data-title="Personal Blog Website" data-description="Developed a personal blog from scratch, featuring a custom theme, content management system, and SEO optimization." data-gallery-images='["project3.jpg", "project2.jpg", "project1.jpg"]'>
+            <img src="project3.jpg" alt="Project 6" loading="lazy">
+            <h3>Personal Blog Website</h3>
+        </div>
     </div>
 </section>
 
+<!-- Project Modal -->
+<div id="project-modal" class="modal-overlay">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="modal-body">
+            <div class="modal-left">
+                <img id="modal-main-image" src="" alt="Main project image">
+                <h3 id="modal-title"></h3>
+                <p id="modal-description"></p>
+            </div>
+            <div class="modal-right">
+                <h4>More Images</h4>
+                <div id="modal-gallery" class="gallery-scroll">
+                    <!-- Gallery images will be injected here by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
  </main>
+  <!-- closure line -->
+    <p class="closure">Thank you for visiting my website!</p>
+
+  <!-- footer -->
+  <section id="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h3>Abhinav Raj</h3>
+        <p>Passionate digital creator specializing in Web Development, Graphic Design, and Video Editing. Let's create something amazing.</p>
+      </div>
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">About Me</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-column">
+        <h3>Contact Info</h3>
+        <p>Email: <a href="mailto:abhinavraj.11124@gmail.com">abhinavraj.11124@gmail.com</a></p>
+        <p>Location: India</p>
+      </div>
+    </div>
+    <section id="social-media">
+    <ul>
+     <li class="icon-only">
+       <a href="mailto:abhinavraj.11124@gmail.com" class="social-link social-icon" aria-label="Email">
+         <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="https://www.linkedin.com/in/abhinav-raj-8549513b1" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="LinkedIn">
+         <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="https://github.com/Abh1navRaj-dev" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="GitHub">
+         <i class="fa-brands fa-github" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+      <a href="https://www.instagram.com/abh1nav.raj/" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Instagram">
+        <i class="fa-brands fa-square-instagram" aria-hidden="true"></i>
+      </a>
+     </li>
+     <li class="icon-only">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Facebook">
+         <i class="fa-brands fa-facebook" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Twitch">
+         <i class="fa-brands fa-twitch" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="https://x.com/Abh1navRaj" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Twitter">
+         <i class="fa-brands fa-twitter" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Freelancer">
+         <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Upwork">
+         <i class="fa-solid fa-briefcase" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="#" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="Fiverr">
+         <i class="fa-solid fa-dollar-sign" aria-hidden="true"></i>
+       </a>
+     </li>
+     <li class="icon-only">
+       <a href="www.youtube.com/@Abhinav-c4l" target="_blank" rel="noopener noreferrer" class="social-link social-icon" aria-label="YouTube">
+         <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+       </a>
+     </li>
+    </ul>
+  </section>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Abhinav Raj. All rights reserved.</p>
+    </div>
+  </section>
 </body>
 </html>
