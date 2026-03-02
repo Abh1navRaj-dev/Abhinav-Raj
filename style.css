@@ -18,6 +18,16 @@
     --accent-hover-color: #8A244B;
 }
 
+/* --- Light Theme Variables --- */
+body.light-theme {
+    --nav-bg: #F0F0F0;
+    --sec-bg: #FFFFFF;
+    --sec-bg-darker: #EAEAEA;
+    --text-color: #14213d;
+    --bg-color: #F9F9F9;
+    /* Note: Some elements with hardcoded colors might need specific overrides. */
+}
+
 body {
         background-color: var(--bg-color);
         overflow-x: hidden;
@@ -82,6 +92,16 @@ body {
     border: 2px solid var(--bg-color);
     border-radius: 10px;
     font-weight: 600;
+}
+
+/* Theme Toggle Buttons */
+#theme-toggle-container button {
+    background: none;
+    border: none;
+    color: var(--text-color);
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 5px;
 }
 /* --- Home Page Sections --- */
 .main-container {
@@ -217,6 +237,7 @@ body {
 #skills .fa-html5 { color: rgb(255, 113, 0); }
 #skills .fa-css3-alt { color: rgb(0, 208, 255); }
 #skills .fa-js { color: rgb(255, 234, 1); }
+#skills .fa-node-js { color: #68A063; /* Node.js Green */ }
 #skills .fa-python { color: rgb(0, 81, 255); }
 #skills .fa-palette { color: rgb(166, 255, 0); }
 #skills .fa-cube { color: rgb(255, 0, 0); }

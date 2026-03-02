@@ -32,6 +32,10 @@
     <li class="item"><a href="portfolio.html">Portfolio</a></li>
     <li class="item"><a href="contact.html">Contact</a></li>
     <li class="item"><a href="form.html">Inquiry Form</a></li>
+    <li class="item" id="theme-toggle-container">
+      <button id="lightbtn" title="Switch to Light Theme"><i class="fa-solid fa-sun"></i></button>
+      <button id="darkbtn" title="Switch to Dark Theme" style="display: none;"><i class="fa-solid fa-moon"></i></button>
+    </li>
    </ul>
   </nav>
  </header>
@@ -48,7 +52,7 @@
      <div class="hero-content">
       <h2>Introduction</h2>
       <p>
-       Hello! I'm Abhinav Raj, a versatile digital creator with a passion for bringing ideas to life
+       Hello! I'm Abhinav Raj, a versatile creator with a passion for bringing ideas to life
        across various platforms. I specialize in <strong>Web Development</strong>, crafting stunning
        and functional websites that deliver exceptional user experiences. Beyond coding, my expertise
        extends to <strong>Graphic Designing</strong>, <strong>Video Editing</strong>, and
@@ -76,6 +80,10 @@
        <li>
         <i class="fa-brands fa-js"></i>
         <span>JavaScript</span>
+       </li>
+        <li>
+        <i class="fa-brands fa-node-js"></i>
+        <span>Node js</span>
        </li>
        <li>
         <i class="fa-brands fa-python"></i>
@@ -106,6 +114,10 @@
         <i class="fa-brands fa-js"></i>
         <span>JavaScript</span>
        </li>
+       <li>
+       <i class="fa-brands fa-node-js"></i>
+       <span>Node-js</span>
+      </li>
        <li>
         <i class="fa-brands fa-python"></i>
         <span>Python</span>
@@ -154,7 +166,7 @@
       <div class="service-box">
          <img src="alan-alves-CX0r0CKFvYo-unsplash.jpg" alt="Video & Image Editing" class="service-bg-image">
          <div class="service-overlay">
-             <h3>Video & Image Editing</h3>
+             <h3>Video & Photo Editing</h3>
              <p>Polishing your media to perfection.</p>
              <a href="services.html" class="service-link">
                  <i class="fa-solid fa-circle-arrow-right"></i>
@@ -181,6 +193,7 @@
              </a>
          </div>
       </div>
+      
      </div>
    </section>
    <!-- End Services Section -->
@@ -205,7 +218,10 @@
        <p>Brief description of the project.</p>
       </div>
       <div class="work-item view-all-btn">
-       <a href="portfolio.html">View All Projects</a>
+       <a href="portfolio.html">
+        <i class="fa-solid fa-circle-arrow-right"></i>
+       </a>
+       
       </div>
      </div>
     </div>
@@ -246,6 +262,7 @@
         <h3>Contact Info</h3>
         <p>Email: <a href="mailto:abhinavraj.11124@gmail.com">abhinavraj.11124@gmail.com</a></p>
         <p>Location: India</p>
+        <span id="time"></span>
       </div>
     </div>
     <section id="social-media">

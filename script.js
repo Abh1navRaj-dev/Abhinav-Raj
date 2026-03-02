@@ -61,4 +61,35 @@ document.addEventListener('DOMContentLoaded', () => {
         modal.addEventListener('click', (event) => event.target === modal && closeModal());
         document.addEventListener('keydown', (event) => event.key === 'Escape' && closeModal());
     }
+
+    // --- Clock ---
+    function display_time() {
+        const time = new Date();
+        const timeEl = document.getElementById('time');
+        if (timeEl) {
+            // Format to show only the time, not the full date object
+            timeEl.innerHTML = time.toLocaleTimeString();
+        }
+    }
+    setInterval(display_time, 1000);
+
+    // --- Theme Toggler ---
+    const themeToggleContainer = document.getElementById('theme-toggle-container');
+    if (themeToggleContainer) {
+        const darkbtn = document.getElementById('darkbtn');
+        const lightbtn = document.getElementById('lightbtn');
+
+        themeToggleContainer.addEventListener('click', () => {
+            document.body.classList.toggle('light-theme');
+    
+           
+            if (document.body.classList.contains('light-theme')) {
+                lightbtn.style.display = 'none'; 
+                darkbtn.style.display = 'block'; 
+            } else {
+                lightbtn.style.display = 'block'; 
+                darkbtn.style.display = 'none';  
+            }
+        });
+    }
 });
